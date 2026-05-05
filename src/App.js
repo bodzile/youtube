@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import {useState} from 'react';
+import VideoList from "./Components/VideoList";
+
+const VIDEOS = [
+    {
+        id: 1,
+        title: "House of rising sun",
+        url: "https://www.youtube.com/watch?v=sXYIxJScSik&list=RDsXYIxJScSik&start_radio=1",
+        cover: "https://i.ytimg.com/vi/sXYIxJScSik/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDsgzCJ39WZAs6l-IpG4_mMLNFWVQ"
+    },
+    {
+        id: 2,
+        title: "How to learn react",
+        url: "https://www.youtube.com/watch?v=1mjlM_RnsVE&list=RD1mjlM_RnsVE&start_radio=1",
+        cover: "https://i.ytimg.com/vi/1mjlM_RnsVE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBxBScDqh1pH3XN3d_kP3JQG0WrJg"
+    }
+];
+
+const App = () => {
+
+    let [videos, setVideos] = useState(VIDEOS);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <h2>Poz</h2>
+        <VideoList videos={videos} />
+    </>
   );
 }
 
