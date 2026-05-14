@@ -1,11 +1,9 @@
 
-import VIDEOS from "./../videos.json"
-
-const VideoList = () => {
+const VideoList = ({videos}) => {
 
     return (
         <div>
-            {VIDEOS.map( ({id, title, url, cover}) =>{
+            {videos.map( ({id, title, url, cover}) =>{
               return (
                 <a href={url} target="_blank" key={id} rel="noreferrer">
                     <img src={cover} alt=""/>
